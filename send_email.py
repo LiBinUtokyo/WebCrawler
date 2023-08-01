@@ -6,14 +6,17 @@
 # from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import smtplib
+from config import info
+
+
 
 #发送方邮箱信息
-msg_from = '740641978@qq.com'
-passwd = 'lndghjmddadobahi'
+msg_from = info['msg_from']
+passwd = info['passwd']
 
 #接收方邮箱信息
 # to = ['libin11170225@gmail.com','li@g.ecc.u-tokyo.ac.jp']
-to = 'libin11170225@gmail.com'
+to = info['to']
 
 #邮件内容
 # msg = MIMEMultipart() #MIMEMultipart类可以放各种各样的格式的内容
