@@ -2,14 +2,14 @@
 Let's learn it  
 来学习爬虫吧  
 
-- `main_wiout_login`: 普通网页的内容爬取（东大官网）
-- `main_with_login`: 带有登陆页面的揭示板公告爬取（东大新领域人间环境揭示板）
-- `send_email`: 发送邮件的函数  
+- `main_wiout_login.py`: 普通网页的内容爬取（东大官网）
+- `main_with_login.py`: 带有登陆页面的揭示板公告爬取（东大新领域人间环境揭示板）
+- `send_email.py`: 发送邮件的函数  
 
 
-## 注意：需要自己定义config.py文件和设置while True循环
-
-自行创建config.py文件并在其中定义如下内容：
+## 注意：需要自己定义config.py，news_GSFS.csv文件和设置while True循环
+在开始运行`main_wiout_login.py`或`main_with_login.py`之前：
+自行创建config.py文件并在其中定义如下内容
 ```python
 info = {
 'msg_from': '', #设置了SMTP的发送者的邮箱地址
@@ -21,3 +21,5 @@ info = {
 'urls': [] #用于main_with_login.py，可以填：'soumu','kyoumu','yosan','kenkyu','keiyaku','ilo'及其中的任意子集
 }
 ```
+自行创建news_GSFS.csv文件并在第一行加入如下内容：
+`Category,Date,Title,Link`
