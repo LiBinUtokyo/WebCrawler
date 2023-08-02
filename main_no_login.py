@@ -47,7 +47,7 @@ for item in news_web:
         'link': 'https://www.u-tokyo.ac.jp'+item.xpath('./a/@href')[0]
     })
 
-print(news)
+# print(news)
 
 #将news存到csv文件里
 # #判断news.txt文件是否存在，不存在则创建，并写入date-title-link数据
@@ -77,7 +77,7 @@ with open('news.csv','a+',encoding='utf_8_sig',newline='') as f:
             f.seek(0,2)
             writer = csv.DictWriter(f,fieldnames)
             writer.writerow(news[i])
-            send_email.send(news[i])
+            send_email.send(news[i]['date']+': '+news[i]['title'],str(news[i]))
             time.sleep(2)
 
 
