@@ -9,7 +9,7 @@ Let's learn it
 
 ## 注意：需要自己定义config.py，news_GSFS.csv文件和设置while True循环
 在开始运行`main_wiout_login.py`或`main_with_login.py`之前：
-自行创建config.py文件并在其中定义如下内容
+- 自行创建config.py文件并在其中定义如下内容
 ```python
 info = {
 'msg_from': '', #设置了SMTP的发送者的邮箱地址
@@ -21,5 +21,5 @@ info = {
 'urls': [] #用于main_with_login.py，可以填：'soumu','kyoumu','yosan','kenkyu','keiyaku','ilo'及其中的任意子集
 }
 ```
-自行创建news_GSFS.csv文件并在第一行加入如下内容：
+- 自行创建news_GSFS.csv文件并在第一行加入如下表头：  
 `Category,Date,Title,Link`
