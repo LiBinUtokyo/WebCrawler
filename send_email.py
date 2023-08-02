@@ -9,8 +9,9 @@ import smtplib
 from config import info
 
 
-def send(news):
-    #news 为 {date:...,title:...,link:...}格式的字典
+def send(title:str,cont:str):
+    # title,cont均为字符串类型
+    #news 为 {Category:...,date:...,title:...,link:...}格式的字典
     #发送方邮箱信息
     msg_from = info['msg_from']
     passwd = info['passwd']
@@ -25,12 +26,12 @@ def send(news):
     # msg.attach(MIMEText(cont,'plain','utf-8')) #MIMEText三个参数，文本内容，文本格式和编码格式
 
     # cont = "弃我去者，昨日之日不可留; 乱我心者，今日之日多烦忧。"
-    cont = news['link']
+    # cont = news['link']
     msg = MIMEText(cont,'plain','utf-8')
 
     #邮件主题
-    msg['Subject'] = '-'.join([news['date'],news['title']])
-
+    # msg['Subject'] = '-'.join([news['date'],news['title']])
+    msg['Subject'] = title
     #from和to信息
     msg['From'] = msg_from
     msg['to'] = to
