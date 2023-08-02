@@ -87,5 +87,3 @@ with open('news.csv','a+',encoding='utf_8_sig',newline='') as f:
     # writer = csv.DictWriter(f,fieldnames)
     # for i in range(len(news)):
     #     writer.writerow(news[i])
-
-

@@ -22,6 +22,7 @@ url = 'https://gsfs-portal.k.u-tokyo.ac.jp/soumu/ishoku/ra/#'
 headers = {'User-Agent':info['agent2'],
            'Cookie': info['cookie']}
 
+
 #通过rquestes获取网页信息，使用apparent来解决返回乱码的问题，这里没有apparent反而不会乱码
 response = requests.get(url, headers = headers, timeout = 10)
 # response.encoding = response.apparent_encoding
