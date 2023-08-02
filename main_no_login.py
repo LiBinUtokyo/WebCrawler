@@ -12,10 +12,11 @@ import requests #用于向网站发送请求
 from lxml import etree #网页解析库lxml
 import os
 import send_email #自定义函数，用于发送邮件
+from config import info
 
 #构造请求url和头部信息headers
 url = 'https://www.u-tokyo.ac.jp/ja/index.html'
-headers = {'User-Agent': "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"}
+headers = {'User-Agent': info['agent1']}
 
 # url = 'https://gsfs-portal.k.u-tokyo.ac.jp/soumu/ishoku/ra/#'
 # headers = {'User-Agent':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.5.2 Safari/605.1.15'}
