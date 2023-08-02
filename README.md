@@ -2,6 +2,8 @@
 Let's learn it  
 来学习爬虫吧  
 
+本项目核心功能：监视目标网页的公告栏。有新的公告刊载的话，就向你指定的邮箱发送通知邮件
+
 - `main_wiout_login.py`: 普通网页的内容爬取（东大官网）
 - `main_with_login.py`: 带有登陆页面的揭示板公告爬取（东大新领域人间环境揭示板）
 - `send_email.py`: 发送邮件的函数  
@@ -23,3 +25,5 @@ info = {
 ```
 - 自行创建news_GSFS.csv文件并在第一行加入如下表头：  
 `Category,Date,Title,Link`
+
+- 如果希望周期性自动运行脚本，请自行对整个脚本设置while True循环
