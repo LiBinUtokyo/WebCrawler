@@ -1,6 +1,7 @@
 '''
 本内容参考自网页https://cloud.tencent.com/developer/article/1932575
 用于学习网络爬虫
+对于不需要登陆验证的网页，用这个就行
 从东京大学官网检测最新通知并存储起来，当有新通知的时候发送邮件
 '''
 import csv #用于把爬取的数据存成CSV格式
@@ -15,6 +16,9 @@ import send_email #自定义函数，用于发送邮件
 #构造请求url和头部信息headers
 url = 'https://www.u-tokyo.ac.jp/ja/index.html'
 headers = {'User-Agent': "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"}
+
+# url = 'https://gsfs-portal.k.u-tokyo.ac.jp/soumu/ishoku/ra/#'
+# headers = {'User-Agent':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.5.2 Safari/605.1.15'}
 
 #通过rquestes获取网页信息，使用apparent来解决返回乱码的问题
 response = requests.get(url, headers = headers, timeout = 10)
