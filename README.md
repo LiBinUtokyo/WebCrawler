@@ -2,11 +2,14 @@
 Let's learn it  
 来学习爬虫吧  
 
+适用人群：希望跟踪最新校内公告的东大新领域创成研究科在校生  
 本项目核心功能：监视目标网页的公告栏。有新的公告刊载的话，就向你指定的邮箱发送通知邮件
 
 - `main_wiout_login.py`: 普通网页的内容爬取（东大官网）
 - `main_with_login.py`: 带有登陆页面的揭示板公告爬取（东大新领域人间环境揭示板）
 - `send_email.py`: 发送邮件的函数  
+- `news.csv`: 存储东大官网ADMISSIONS部分公告的数据库
+- `news_GSFS`: 存储东大新领域人间环境校内公告的数据库
 
 
 ## 注意：需要自己定义config.py，news_GSFS.csv文件和设置while True循环
