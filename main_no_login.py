@@ -18,11 +18,13 @@ from config import info
 url = 'https://www.u-tokyo.ac.jp/ja/index.html'
 headers = {'User-Agent': info['agent1']}
 
-# url = 'https://gsfs-portal.k.u-tokyo.ac.jp/soumu/ishoku/ra/#'
-# headers = {'User-Agent':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.5.2 Safari/605.1.15'}
-
 #通过rquestes获取网页信息，使用apparent来解决返回乱码的问题
 response = requests.get(url, headers = headers, timeout = 10)
+# #获取这个网页
+# html = response.content
+# with open('utokyo.html','wb') as f:
+#     f.write(html)
+
 response.encoding = response.apparent_encoding
 html = response.text
 # print(html)
