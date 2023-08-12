@@ -53,8 +53,7 @@ for url in info['urls']:
                 'Category': ''.join(section.xpath('./div/h3/text()')),
                 'Date': ''.join(item.xpath('./a/p[2]/text()')).split(' ')[0],
                 'Title': ''.join(item.xpath('./a/p[1]/text()')),
-                'Link': ''.join(['https://gsfs-portal.k.u-tokyo.ac.jp',item.xpath('./a/@href')[0]]),
-                'Content': ''
+                'Link': ''.join(['https://gsfs-portal.k.u-tokyo.ac.jp',item.xpath('./a/@href')[0]])
             })
             # print(news[-1])
 
@@ -81,9 +80,19 @@ for url in info['urls']:
             if not flag:
                 f.seek(0,2)
                 writer.writerow(news[i])
-                content = 'Date: %s \r\n Title: %s \r\n Link: %s \r\n Content: %s' %(news[i]['Date'],news[i]['Title'],news[i]['Link'],news[i]['Content'])
-                send_email.send(news[i]['Category']+': '+news[i]['Date']+'-'+news[i]['Title'],content)
-                time.sleep(0.5)
+                #获取新通知内容,还没写完，不过感觉不是很有必要
+                # response = requests.get(news[i]['Link'], headers = headers, timeout = 10)
+                # html = response.text
+                # # print(html)
+                # #解析网页，对html文本使用 etree.HTML(html)解析，得到Element对象
+                # parse = etree.HTML(html)
+                # #提取news_web，对Element对象使用xpath筛选，返回一个列表（里面的元素也是Element）
+                # # print(parse.xpath('/html/body/div/div/div/div/div/div/section'))
+                # news_web = parse.xpath('/html/body/div/div/div/div/div/div/section') 
+                # Content=''
+                text = 'Date: %s \r\n Title: %s \r\n Link: %s \r\n Content: %s' %(news[i]['Date'],news[i]['Title'],news[i]['Link'],Content)
+                send_email.send(news[i]['Category']+': '+news[i]['Date']+'-'+news[i]['Title'],text)
+                time.sleep(10*random.random())
     time.sleep(5*random.random())
 
 
