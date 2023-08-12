@@ -89,7 +89,7 @@ for url in info['urls']:
                 # #提取news_web，对Element对象使用xpath筛选，返回一个列表（里面的元素也是Element）
                 # # print(parse.xpath('/html/body/div/div/div/div/div/div/section'))
                 # news_web = parse.xpath('/html/body/div/div/div/div/div/div/section') 
-                # Content=''
+                Content=''
                 text = 'Date: %s \r\n Title: %s \r\n Link: %s \r\n Content: %s' %(news[i]['Date'],news[i]['Title'],news[i]['Link'],Content)
                 send_email.send(news[i]['Category']+': '+news[i]['Date']+'-'+news[i]['Title'],text)
                 time.sleep(10*random.random())
