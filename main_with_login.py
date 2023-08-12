@@ -53,7 +53,8 @@ for url in info['urls']:
                 'Category': ''.join(section.xpath('./div/h3/text()')),
                 'Date': ''.join(item.xpath('./a/p[2]/text()')).split(' ')[0],
                 'Title': ''.join(item.xpath('./a/p[1]/text()')),
-                'Link': ''.join(['https://gsfs-portal.k.u-tokyo.ac.jp',item.xpath('./a/@href')[0]])
+                'Link': ''.join(['https://gsfs-portal.k.u-tokyo.ac.jp',item.xpath('./a/@href')[0]]),
+                'Content': ''
             })
             # print(news[-1])
 
@@ -80,7 +81,8 @@ for url in info['urls']:
             if not flag:
                 f.seek(0,2)
                 writer.writerow(news[i])
-                send_email.send(news[i]['Category']+': '+news[i]['Date']+'-'+news[i]['Title'],str(news[i]))
+                content = 'Date: %s \r\n Title: %s \r\n Link: %s \r\n Content: %s' %(news[i]['Date'],news[i]['Title'],news[i]['Link'],news[i]['Content'])
+                send_email.send(news[i]['Category']+': '+news[i]['Date']+'-'+news[i]['Title'],content)
                 time.sleep(0.5)
     time.sleep(5*random.random())
 
