@@ -34,7 +34,7 @@ def send(title:str,cont:str):
     msg['Subject'] = title
     #from和to信息
     msg['From'] = msg_from
-    msg['to'] = to
+    msg['to'] = ', '.join(to)
 
 
     try:
