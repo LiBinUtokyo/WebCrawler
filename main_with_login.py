@@ -46,9 +46,11 @@ for url in info['urls']:
     news = []
     for section in news_web:
         print(section)
+        print(section.xpath('./div/h3/text()'))
         # for item in section.xpath('.//*[class="c-list-5__item"]'):
         for item in section.xpath('./div/div/div/div/div/ul/li'):
             print(item)
+            print(item.xpath('./a/p[1]/text()'))
             news.append({
                 'Category': ''.join(section.xpath('./div/h3/text()')),
                 'Date': ''.join(item.xpath('./a/p[2]/text()')).split(' ')[0],
@@ -91,7 +93,8 @@ for url in info['urls']:
                 # news_web = parse.xpath('/html/body/div/div/div/div/div/div/section') 
                 Content=''
                 text = 'Date: %s \r\n Title: %s \r\n Link: %s \r\n Content: %s' %(news[i]['Date'],news[i]['Title'],news[i]['Link'],Content)
-                send_email.send(news[i]['Category']+': '+news[i]['Date']+'-'+news[i]['Title'],text)
+                # send_email.send(news[i]['Category']+': '+news[i]['Date']+'-'+news[i]['Title'],text)
+                print(text)
                 time.sleep(10*random.random())
     time.sleep(5*random.random())
 
