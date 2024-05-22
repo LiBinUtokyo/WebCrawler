@@ -1,7 +1,7 @@
 '''
 用740641978@qq.com发送电子邮件到我的libin11170225@gmail.com邮箱中去
 参考教程: https://blog.csdn.net/MATLAB_matlab/article/details/106240424
-
+https://www.liaoxuefeng.com/wiki/1016959663602400/1017790702398272
 '''
 # from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
@@ -18,7 +18,8 @@ def send(title:str,cont:str):
 
     #接收方邮箱信息
     # to = 'email adress'
-    to = info['to']
+    to = [info['to']]
+    # print(to)
 
     #邮件内容
     # msg = MIMEMultipart() #MIMEMultipart类可以放各种各样的格式的内容
