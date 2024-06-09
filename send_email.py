@@ -18,7 +18,7 @@ def send(title:str,cont:str):
 
     #接收方邮箱信息
     # to = 'email adress'
-    to = [info['to']]
+    to = info['to']
     # print(to)
 
     #邮件内容
